@@ -31,23 +31,50 @@ These models can be conditional upon each other. For example, for a given synthe
 
 Cell types for which generative models for at least some organelles have been built include human HeLa cells, mouse NIH 3T3 cells, and Arabidopsis protoplasts. Planned projects include mouse T lymphocytes and rat PC12 cells.
 
-### CellOrganizer Releases
+### CellOrganizer v2.7.0
 
-#### CellOrganizer v2.7.0
+#### Features
 
-##### Release Highlights
+* Included new model class/type: constructive_geometry/half-ellipsoid
+* Included new model class/type: framework/pca
+* Included support for OME.TIFF with regions of interest
+* Included bash scripts to run demos from compiled versions of the main functions
 
-###### Features
+#### Enhancements
 
-* Included new model class/type: constructive_geomertry/half-ellipsoid.
-* Included support for OME.TIFF with regions of interest.
-
-###### Enhancements
-* `img2slml` now checks the combination of model class and type for every submodel before attempting to extract parameters from image
+* img2slml now checks the combination of model class and type for every submodel before attempting to extract parameters from image 
 * Improved pipeline so that CellOrganizer will stop computation and report to user if no images are found in the path or if software fails to extract parameters.
-* Added `demo3D44` to show how to synthesize from a model class/type constructive_geomertry/half-ellipsoid
+* Added demo3D44 to show how to synthesize from a model class/type constructive_geomertry/half-ellipsoid
 * Added a battery of unit test for demos using Matlab testing framework
-* Added `demo3D45` to show how to use OME.TIFF files with ROIs.
+* Added demo3D45 to show how to use OME.TIFF files with ROIs.
+* Added demo2D05, demo2D06, demo2D07 to show how to train and synthesize from a classtype framework/pca model
+
+## About Singularity
+
+## Creating the container
+
+To create the container run these commands
+
+```
+➜ singularity image.create -s 5000 ubuntu16.04-cellorganizer.img
+
+Creating empty 5000MiB image file: ubuntu16.04-cellorganizer.img
+Formatting image with ext3 file system
+Image is done: ubuntu16.04-cellorganizer.img
+```
+
+The previous commands create an empty image. Then run
+
+```
+➜ sudo singularity build ubuntu16.04-cellorganizer.img Singularity
+Building into existing container: ubuntu16.04-cellorganizer.img
+Using container recipe deffile: Singularity
+Sanitizing environment
+Adding base Singularity environment to container
+Docker image path: index.docker.io/icaoberg/cellorganizer:latest
+Cache folder set to /root/.singularity/docker
+[2/21] |===|-------------------------------|   9.5%
+```
 
 ---
 
