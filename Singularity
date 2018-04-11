@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: murphylab/docker-cellorganizer:v2.7.0
+From: murphylab/docker-cellorganizer:v2.7.1
 
 IncludeCmd: yes
 
