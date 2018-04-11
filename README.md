@@ -1,6 +1,6 @@
 # singularity-cellorganizer
 
-[![Release Status](https://img.shields.io/badge/release-prealpha-red.svg)](http://www.cellorganizer.org/)
+[![Release Status](https://img.shields.io/badge/release-v2.7.1-red.svg)](http://www.cellorganizer.org/)
 [![Build Status](https://travis-ci.org/icaoberg/singularity-cellorganizer.svg?branch=master)](https://travis-ci.org/icaoberg/singularity-cellorganizer)
 [![GitHub issues](https://img.shields.io/github/issues/icaoberg/singularity-cellorganizer.svg)](https://github.com/icaoberg/singularity-cellorganizer/issues)
 [![GitHub forks](https://img.shields.io/github/forks/icaoberg/singularity-cellorganizer.svg)](https://github.com/icaoberg/singularity-cellorganizer/network)
@@ -71,19 +71,19 @@ Cell types for which generative models for at least some organelles have been bu
 
 ### Creating the container
 
-To create the container run these commands
+To create the container, run these commands
 
 ```
-singularity image.create -s 5000 cellorganizer.img
-sudo singularity build cellorganizer.img Singularity
+> singularity image.create -s 5000 cellorganizer.img
+> sudo singularity build cellorganizer.img Singularity
 ```
 
 ### Accesing the container
 
-To access the container
+To access the container, run this command
 
 ```
-singularity shell cellorganizer.img
+> singularity shell cellorganizer.img
 
 Singularity: Invoking an interactive shell within container...
 
@@ -92,6 +92,35 @@ Singularity cellorganizer.img:~/singularity-cellorganizer> ls -lt /opt/cellorgan
 total 87238
 -rwxr-xr-x 1 14246 users 40728609 Mar  3 20:22 slml2img
 -rwxr-xr-x 1 14246 users 48602526 Mar  3 20:21 img2slml
+```
+
+## CellOrganizer v2.7.1 
+
+### Creating the container
+
+To create the container, run these commands
+
+```
+> singularity image.create -s 5000 cellorganizer.img
+> sudo singularity build cellorganizer.img Singularity
+```
+
+### Accesing the container
+
+To access the container, run the command
+
+```
+> singularity shell cellorganizer.img
+
+Singularity: Invoking an interactive shell within container...
+
+Singularity cellorganizer.img:~/singularity-cellorganizer> ls -lt /opt/cellorganizer-binaries/
+
+total 111821
+-rwxr-xr-x 1 14246 users 12699470 Mar 29 14:25 slml2report
+-rwxr-xr-x 1 14246 users 12471747 Mar 29 14:25 slml2info
+-rwxr-xr-x 1 14246 users 40728639 Mar 29 14:25 slml2img
+-rwxr-xr-x 1 14246 users 48604048 Mar 29 14:25 img2slml
 ```
 ---
 
