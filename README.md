@@ -71,7 +71,7 @@ Cell types for which generative models for at least some organelles have been bu
 
 ### Creating the container
 
-To create the container run these commands
+To create the container, run these commands
 
 ```
 > singularity image.create -s 5000 cellorganizer.img
@@ -80,7 +80,7 @@ To create the container run these commands
 
 ### Accesing the container
 
-To access the container
+To access the container, run this command
 
 ```
 > singularity shell cellorganizer.img
@@ -98,7 +98,7 @@ total 87238
 
 ### Creating the container
 
-To create the container run these commands
+To create the container, run these commands
 
 ```
 > singularity image.create -s 5000 cellorganizer.img
@@ -107,7 +107,7 @@ To create the container run these commands
 
 ### Accesing the container
 
-To access the container
+To access the container, run the command
 
 ```
 > singularity shell cellorganizer.img
