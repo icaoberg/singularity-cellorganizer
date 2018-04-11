@@ -72,24 +72,8 @@ Cell types for which generative models for at least some organelles have been bu
 To create the container run these commands
 
 ```
-➜ singularity image.create -s 5000 ubuntu16.04-cellorganizer.img
-
-Creating empty 5000MiB image file: ubuntu16.04-cellorganizer.img
-Formatting image with ext3 file system
-Image is done: ubuntu16.04-cellorganizer.img
-```
-
-The previous commands create an empty image. Then run
-
-```
-➜ sudo singularity build ubuntu16.04-cellorganizer.img Singularity
-Building into existing container: ubuntu16.04-cellorganizer.img
-Using container recipe deffile: Singularity
-Sanitizing environment
-Adding base Singularity environment to container
-Docker image path: index.docker.io/icaoberg/cellorganizer:latest
-Cache folder set to /root/.singularity/docker
-[2/21] |===|-------------------------------|   9.5%
+singularity image.create -s 5000 cellorganizer.img
+sudo singularity build cellorganizer.img Singularity
 ```
 
 ---
@@ -98,4 +82,4 @@ Support for [CellOrganizer](http://cellorganizer.org/) has been provided by gran
 
 [![MMBioS](https://i1.wp.com/www.cellorganizer.org/wp-content/uploads/2017/08/MMBioSlogo-e1503517857313.gif?h=60)](http://www.mmbios.org)
 
-Copyright © 2007-2018 by the [Murphy Lab](http://murphylab.web.cmu.edu) at the [Computational Biology Department](http://www.cbd.cmu.edu) in [Carnegie Mellon University](http://www.cmu.edu)
+Copyright (c) 2007-2018 by the [Murphy Lab](http://murphylab.web.cmu.edu) at the [Computational Biology Department](http://www.cbd.cmu.edu) in [Carnegie Mellon University](http://www.cmu.edu)
