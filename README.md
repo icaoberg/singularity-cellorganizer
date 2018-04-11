@@ -1,6 +1,6 @@
 # singularity-cellorganizer
 
-[![Release Status](https://img.shields.io/badge/release-prealpha-red.svg)](http://www.cellorganizer.org/)
+[![Release Status](https://img.shields.io/badge/release-v2.7.1-red.svg)](http://www.cellorganizer.org/)
 [![Build Status](https://travis-ci.org/icaoberg/singularity-cellorganizer.svg?branch=master)](https://travis-ci.org/icaoberg/singularity-cellorganizer)
 [![GitHub issues](https://img.shields.io/github/issues/icaoberg/singularity-cellorganizer.svg)](https://github.com/icaoberg/singularity-cellorganizer/issues)
 [![GitHub forks](https://img.shields.io/github/forks/icaoberg/singularity-cellorganizer.svg)](https://github.com/icaoberg/singularity-cellorganizer/network)
