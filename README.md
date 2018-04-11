@@ -93,6 +93,35 @@ total 87238
 -rwxr-xr-x 1 14246 users 40728609 Mar  3 20:22 slml2img
 -rwxr-xr-x 1 14246 users 48602526 Mar  3 20:21 img2slml
 ```
+
+## CellOrganizer v2.7.1 
+
+### Creating the container
+
+To create the container run these commands
+
+```
+singularity image.create -s 5000 cellorganizer.img
+sudo singularity build cellorganizer.img Singularity
+```
+
+### Accesing the container
+
+To access the container
+
+```
+singularity shell cellorganizer.img
+
+Singularity: Invoking an interactive shell within container...
+
+Singularity cellorganizer.img:~/singularity-cellorganizer> ls -lt /opt/cellorganizer-binaries/
+
+total 111821
+-rwxr-xr-x 1 14246 users 12699470 Mar 29 14:25 slml2report
+-rwxr-xr-x 1 14246 users 12471747 Mar 29 14:25 slml2info
+-rwxr-xr-x 1 14246 users 40728639 Mar 29 14:25 slml2img
+-rwxr-xr-x 1 14246 users 48604048 Mar 29 14:25 img2slml
+```
 ---
 
 Support for [CellOrganizer](http://cellorganizer.org/) has been provided by grants GM075205, GM090033 and GM103712 from the [National Institute of General Medical Sciences](http://www.nigms.nih.gov/), grants MCB1121919 and MCB1121793 from the [U.S. National Science Foundation](http://nsf.gov/), by a Forschungspreis from the [Alexander von Humboldt Foundation](http://www.humboldt-foundation.de/), and by the [Freiburg Institute for Advanced Studies](http://www.frias.uni-freiburg.de/lifenet?set_language=en).
