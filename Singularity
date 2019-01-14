@@ -43,13 +43,9 @@ IncludeCmd: yes
     tar -xvf cellorganizer-v2.7.2-models.tgz && \
     rm -f cellorganizer-v2.7.2-models.tgz
 
-%appenv cellorganizer
-   BEST_APP=cellorganizer
-   export BEST_APP
-
 %apphelp cellorganizer
     exec echo "For more information visit"
 
 %apprun cellorganizer
-    cellorganizer "$@"
-    #find /home/murphylab/cellorganizer/demos -name "*.sh" | xargs chmod +x {}  "$@"
+    exec /bin/bash
+    find /home/murphylab/cellorganizer/demos -name "*.sh" | xargs chmod +x {}  "$@"
