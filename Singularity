@@ -24,14 +24,14 @@ IncludeCmd: yes
     wget -nc --quiet http://www.cellorganizer.org/Downloads/v2.7/docker/v2.7.2/cellorganizer-v2.7.2-binaries.tgz && \
     tar -xvf cellorganizer-v2.7.2-binaries.tgz && \
     rm cellorganizer-v2.7.2-binaries.tgz && \
-    ls /opt/cellorganizer-binaries/
+    
     mv cellorganizer-binaries/* /opt/cellorganizer-binaries/
     chmod +x /opt/cellorganizer-binaries/img2slml && \
     chmod +x /opt/cellorganizer-binaries/slml2img && \
     chmod +x /opt/cellorganizer-binaries/slml2report && \
     chmod +x /opt/cellorganizer-binaries/slml2info && \
     chmod +x /opt/cellorganizer-binaries/slml2slml && \
-    ls /usr/local/bin/
+    
     ln -sf /opt/cellorganizer-binaries/img2slml /usr/local/bin/img2slml && \
     ln -sf /opt/cellorganizer-binaries/slml2img /usr/local/bin/slml2img && \
     ln -sf /opt/cellorganizer-binaries/slml2report /usr/local/bin/slml2report && \
