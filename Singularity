@@ -3,30 +3,28 @@ From: ubuntu:16.04
 
 IncludeCmd: yes
 
-
 %runscript
     exec /bin/bash "$@"
 
 %post
-    echo "apt get update"
+    echo "Update aptitude"
     /usr/bin/apt-get update && /usr/bin/apt-get -y upgrade
     /usr/bin/apt-get update --fix-missing
     /usr/bin/apt-get install -y vim wget
 
-    echo "Create Folders"
+    echo "Create folders"
     # Make folders for CBD HPC cluster
     if [ ! -d /images ]; then mkdir /images; fi
     if [ ! -d /projects ]; then mkdir /containers; fi
     if [ ! -d /scratch ]; then mkdir /scratch; fi
 
-    echo "Download"
-	mkdir /home/murphylab
+    echo "Download binaries"
+    mkdir /home/murphylab
     cd /home/murphylab && \
-    wget -nc --quiet http://www.cellorganizer.org/Downloads/v2.7/docker/v2.7.2/cellorganizer-v2.7.2-binaries.tgz && \
-    tar -xvf cellorganizer-v2.7.2-binaries.tgz && \
-    rm cellorganizer-v2.7.2-binaries.tgz && \
+    wget -nc --quiet http://www.cellorganizer.org/Downloads/v2.8.0/docker/cellorganizer-binaries.tgz && \
+    tar -xvf cellorganizer-binaries.tgz && \
+    rm cellorganizer-binaries.tgz && \
      
-	
     mv cellorganizer-binaries/ /opt/ && \
     chmod +x /opt/cellorganizer-binaries/img2slml && \
     chmod +x /opt/cellorganizer-binaries/slml2img && \
@@ -41,15 +39,12 @@ IncludeCmd: yes
     ln -sf /opt/cellorganizer-binaries/slml2slml /usr/local/bin/slml2slml
 
     echo "Downloading models" && \
-    wget -nc --quiet http://www.cellorganizer.org/Downloads/v2.7/docker/v2.7.2/cellorganizer-v2.7.2-models.tgz && \
-    tar -xvf cellorganizer-v2.7.2-models.tgz && \
-    rm -f cellorganizer-v2.7.2-models.tgz
-    	
-	#find /home/murphylab/cellorganizer/demos -name "*.sh" | xargs chmod +x
-
+    wget -nc --quiet http://www.cellorganizer.org/Downloads/v2.8.0/docker/cellorganizer-models.tgz && \
+    tar -xvf cellorganizer-models.tgz && \
+    rm -f cellorganizer-models.tgz
+    #find /home/murphylab/cellorganizer/demos -name "*.sh" | xargs chmod +x
 
 ######img2slml############
-
 %appenv img2slml
     cell_app=/opt/cellorganizer-binaries/img2slml/
     export cell_app
@@ -61,7 +56,6 @@ IncludeCmd: yes
     exec /bin/bash "$@"
 
 ######slml2img############
-
 %appenv slml2img
     cell_app=/opt/cellorganizer-binaries/slml2img
     export cell_app
@@ -73,7 +67,6 @@ IncludeCmd: yes
     exec /bin/bash "$@"
 
 ######slml2report############
-
 %appenv slml2report
     cell_app=/opt/cellorganizer-binaries/lml2report
     export cell_app
@@ -85,7 +78,6 @@ IncludeCmd: yes
     exec /bin/bash "$@"
 
 ######slml2info############
-
 %appenv slml2info
     cell_app=s/opt/cellorganizer-binaries/lml2info
     export cell_app
@@ -107,11 +99,3 @@ IncludeCmd: yes
 
 %apprun slml2slml
     exec /bin/bash "$@"
-
-
-
-# %apphelp cellorganizer
-#     exec echo "For more information visit here"
-#
-# %apprun cellorganizer
-#     exec /bin/bash "$@"
