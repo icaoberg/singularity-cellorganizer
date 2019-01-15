@@ -42,7 +42,6 @@ IncludeCmd: yes
     wget -nc --quiet http://www.cellorganizer.org/Downloads/v2.8.0/docker/cellorganizer-models.tgz && \
     tar -xvf cellorganizer-models.tgz && \
     rm -f cellorganizer-models.tgz
-    #find /home/murphylab/cellorganizer/demos -name "*.sh" | xargs chmod +x
 
 ######img2slml############
 %appenv img2slml
