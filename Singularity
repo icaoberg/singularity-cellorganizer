@@ -10,7 +10,7 @@ IncludeCmd: yes
     echo "Update aptitude"
     /usr/bin/apt-get update && /usr/bin/apt-get -y upgrade
     /usr/bin/apt-get update --fix-missing
-    /usr/bin/apt-get install -y vim wget
+    /usr/bin/apt-get install -y nano wget
 
     echo "Create folders"
     # Make folders for CBD HPC cluster
@@ -37,6 +37,7 @@ IncludeCmd: yes
     ln -sf /opt/cellorganizer-binaries/slml2info /usr/local/bin/slml2info && \
     ln -sf /opt/cellorganizer-binaries/slml2slml /usr/local/bin/slml2slml
 
+    mv -v /opt/mcr/v92/sys/os/glnxa64/libstdc++.so.6.0.20 /opt/mcr/v92/sys/os/glnxa64/libstdc++.so.6.0.20.old
 ######img2slml############
 %appenv img2slml
     cell_app=/opt/cellorganizer-binaries/img2slml/
