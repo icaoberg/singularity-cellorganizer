@@ -79,8 +79,4 @@ options.downsampling = [5,5];
 options.model.diffeomorphic.com_align = 'nuc';\
 " > input.txt
 
-img2slml $(pwd)/input.txt
-
-if [ -f $(pwd)/lamp2.mat ]; then
-	file $(pwd)/lamp2.mat
-fi
+img2slml input.txt
