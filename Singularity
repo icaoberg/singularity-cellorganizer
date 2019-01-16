@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: ubuntu:16.04
+From: icaoberg/matlabmcr2017a
 
 IncludeCmd: yes
 
@@ -19,7 +19,6 @@ IncludeCmd: yes
     if [ ! -d /scratch ]; then mkdir /scratch; fi
 
     echo "Download binaries"
-    mkdir /home/murphylab
     cd /home/murphylab && \
     wget -nc --quiet http://www.cellorganizer.org/Downloads/v2.8.0/docker/cellorganizer-binaries.tgz && \
     tar -xvf cellorganizer-binaries.tgz && \
@@ -41,7 +40,9 @@ IncludeCmd: yes
     echo "Downloading models" && \
     wget -nc --quiet http://www.cellorganizer.org/Downloads/v2.8.0/docker/cellorganizer-models.tgz && \
     tar -xvf cellorganizer-models.tgz && \
-    rm -f cellorganizer-models.tgz
+    rm -f cellorganizer-models.tgz && \
+    mv -v cellorganizer/models /opt/cellorganizer-models && \
+    rm -rfv cellorganizer
 
 ######img2slml############
 %appenv img2slml
