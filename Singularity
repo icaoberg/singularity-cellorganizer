@@ -37,13 +37,6 @@ IncludeCmd: yes
     ln -sf /opt/cellorganizer-binaries/slml2info /usr/local/bin/slml2info && \
     ln -sf /opt/cellorganizer-binaries/slml2slml /usr/local/bin/slml2slml
 
-    echo "Downloading models" && \
-    wget -nc --quiet http://www.cellorganizer.org/Downloads/v2.8.0/docker/cellorganizer-models.tgz && \
-    tar -xvf cellorganizer-models.tgz && \
-    rm -f cellorganizer-models.tgz && \
-    mv -v cellorganizer/models /opt/cellorganizer-models && \
-    rm -rfv cellorganizer
-
 ######img2slml############
 %appenv img2slml
     cell_app=/opt/cellorganizer-binaries/img2slml/
