@@ -122,7 +122,7 @@ total 111821
 -rwxr-xr-x 1 14246 users 40728639 Mar 29 14:25 slml2img
 -rwxr-xr-x 1 14246 users 48604048 Mar 29 14:25 img2slml
 ```
-To run a specific app (for example img2slml) within the shell
+To run a specific app within the shell
 ```
 > cd demos/2D/demo2D**/
 > bash ./demo2D**.sh
