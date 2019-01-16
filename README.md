@@ -103,7 +103,6 @@ To create the container, run this command
 ```
 > bash ./script.sh 
 ```
-
 ### Accessing the container
 
 To access the container, run the command
