@@ -37,6 +37,9 @@ IncludeCmd: yes
     ln -sf /opt/cellorganizer-binaries/slml2info /usr/local/bin/slml2info && \
     ln -sf /opt/cellorganizer-binaries/slml2slml /usr/local/bin/slml2slml
 
+	mv /opt/mcr/v92/bin/glnxa64/libexpat.so.1 /opt/mcr/v92/bin/glnxa64/libexpat.so.1.backup
+	mv /opt/mcr/v92/bin/glnxa64/libexpat.so.1.5.0 /opt/mcr/v92/bin/glnxa64/libexpat.so.1.5.0.backup
+
 ######img2slml############
 %appenv img2slml
     cell_app=/opt/cellorganizer-binaries/img2slml/
