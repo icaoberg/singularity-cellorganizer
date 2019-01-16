@@ -47,10 +47,4 @@ options.display = false;
 filenames = {'../demo2D01/lamp2.mat'};
 " > input.txt
 
-if [ -f ../demo2D01/lamp2.mat ]; then
-	slml2img $(pwd)/input.txt
-fi
-
-if [ -f $(pwd)/img/cell1/cell1.tif ]; then
-	file -f $(pwd)/img/cell1/cell1.tif
-fi
+slml2img input.txt
