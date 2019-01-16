@@ -78,7 +78,7 @@ Cell types for which generative models for at least some organelles have been bu
 * Added demo3D45 to show how to use OME.TIFF files with ROIs.
 * Added demo2D05, demo2D06, demo2D07 to show how to train and synthesize from a classtype framework/pca model
 
-## About Singularity
+## Running on Singularity
 
 ## CellOrganizer v2.7.0 
 
@@ -107,7 +107,7 @@ total 87238
 -rwxr-xr-x 1 14246 users 48602526 Mar  3 20:21 img2slml
 ```
 
-## CellOrganizer v2.7.1 
+## CellOrganizer v2.8.0 
 
 ### Creating the container
 
@@ -135,6 +135,7 @@ total 111821
 -rwxr-xr-x 1 14246 users 40728639 Mar 29 14:25 slml2img
 -rwxr-xr-x 1 14246 users 48604048 Mar 29 14:25 img2slml
 ```
+### Running Demos
 To run a specific app within the shell
 ```
 > cd demos/2D/demo2D**/
