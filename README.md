@@ -98,22 +98,23 @@ total 87238
 
 ### Creating the container
 
-To create the container, run these commands
+To create the container, run this command
 
 ```
-> singularity image.create -s 5000 cellorganizer.img
-> sudo singularity build cellorganizer.img Singularity
+> bash ./script.sh 
 ```
 
-### Accesing the container
+### Accessing the container
 
 To access the container, run the command
 
 ```
-> singularity shell cellorganizer.img
+> singularity shell cellorganizer.simg
 
 Singularity: Invoking an interactive shell within container...
-
+```
+To list the possible apps, run
+```
 Singularity cellorganizer.img:~/singularity-cellorganizer> ls -lt /opt/cellorganizer-binaries/
 
 total 111821
@@ -122,6 +123,12 @@ total 111821
 -rwxr-xr-x 1 14246 users 40728639 Mar 29 14:25 slml2img
 -rwxr-xr-x 1 14246 users 48604048 Mar 29 14:25 img2slml
 ```
+To run a specific app (for example img2slml) within the shell
+```
+> cd demos/2D/demo2D**/
+> bash ./demo2D**.sh
+```
+
 ---
 
 Support for [CellOrganizer](http://cellorganizer.org/) has been provided by grants GM075205, GM090033 and GM103712 from the [National Institute of General Medical Sciences](http://www.nigms.nih.gov/), grants MCB1121919 and MCB1121793 from the [U.S. National Science Foundation](http://nsf.gov/), by a Forschungspreis from the [Alexander von Humboldt Foundation](http://www.humboldt-foundation.de/), and by the [Freiburg Institute for Advanced Studies](http://www.frias.uni-freiburg.de/lifenet?set_language=en).
