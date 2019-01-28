@@ -44,68 +44,7 @@ Cell types for which generative models for at least some organelles have been bu
 #### Enhancements
 * Modularized and cleaned up img2slml.
 
-### CellOrganizer v2.7.1
-
-#### Features
-
-* Created method slml2info to replace model2info. The method creates a report with useful information from a model file. Method writes report with Matlab Publisher. When method is deployed, then it generates a report in Markdown.
-* Created method slml2report. The method creates a report comparing two model files. Method writes report with Matlab Publisher. When method is deployed, then it generates a report in Markdown.
-* Created demos demo2D08 and demo2D09 to show how to make a report from a PCA framework model.
-
-#### Enhancements
-
-* Main methods slml2img, slml2info, slml2report and img2slml have been optimized for Matlab Compiler for release with CellOrganizer for Docker.
-
-#### Fixes
-
-* Fixed problem with demo3D46. Unable to synthesize image from CSGO model when combined with a vesicle model.
-
-### CellOrganizer v2.7.0
-
-#### Features
-
-* Included new model class/type: constructive_geometry/half-ellipsoid
-* Included new model class/type: framework/pca
-* Included support for OME.TIFF with regions of interest
-* Included bash scripts to run demos from compiled versions of the main functions
-
-#### Enhancements
-
-* img2slml now checks the combination of model class and type for every submodel before attempting to extract parameters from image 
-* Improved pipeline so that CellOrganizer will stop computation and report to user if no images are found in the path or if software fails to extract parameters.
-* Added demo3D44 to show how to synthesize from a model class/type constructive_geomertry/half-ellipsoid
-* Added a battery of unit test for demos using Matlab testing framework
-* Added demo3D45 to show how to use OME.TIFF files with ROIs.
-* Added demo2D05, demo2D06, demo2D07 to show how to train and synthesize from a classtype framework/pca model
-
 ## Running on Singularity
-
-## CellOrganizer v2.7.0 
-
-### Creating the container
-
-To create the container, run these commands
-
-```
-> singularity image.create -s 5000 cellorganizer.img
-> sudo singularity build cellorganizer.img Singularity
-```
-
-### Accesing the container
-
-To access the container, run this command
-
-```
-> singularity shell cellorganizer.img
-
-Singularity: Invoking an interactive shell within container...
-
-Singularity cellorganizer.img:~/singularity-cellorganizer> ls -lt /opt/cellorganizer-binaries/
-
-total 87238
--rwxr-xr-x 1 14246 users 40728609 Mar  3 20:22 slml2img
--rwxr-xr-x 1 14246 users 48602526 Mar  3 20:21 img2slml
-```
 
 ## CellOrganizer v2.8.0 
 
