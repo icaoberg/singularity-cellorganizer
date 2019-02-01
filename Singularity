@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: icaoberg/matlabmcr2017a
+From: murphylab/matlabmcr2017a-jupyter
 
 IncludeCmd: yes
 
@@ -10,7 +10,7 @@ IncludeCmd: yes
     echo "Update aptitude"
     /usr/bin/apt-get update && /usr/bin/apt-get -y upgrade
     /usr/bin/apt-get update --fix-missing
-    /usr/bin/apt-get install -y nano wget
+    /usr/bin/apt-get install -y vim wget
 
     echo "Create folders"
     # Make folders for CBD HPC cluster
@@ -31,11 +31,11 @@ IncludeCmd: yes
     chmod +x /opt/cellorganizer-binaries/slml2info && \
     chmod +x /opt/cellorganizer-binaries/slml2slml && \
     
-    ln -sf /opt/cellorganizer-binaries/img2slml /usr/local/bin/img2slml && \
-    ln -sf /opt/cellorganizer-binaries/slml2img /usr/local/bin/slml2img && \
-    ln -sf /opt/cellorganizer-binaries/slml2report /usr/local/bin/slml2report && \
-    ln -sf /opt/cellorganizer-binaries/slml2info /usr/local/bin/slml2info && \
-    ln -sf /opt/cellorganizer-binaries/slml2slml /usr/local/bin/slml2slml
+    ln -s /opt/cellorganizer-binaries/img2slml /usr/local/bin/img2slml && \
+    ln -s /opt/cellorganizer-binaries/slml2img /usr/local/bin/slml2img && \
+    ln -s /opt/cellorganizer-binaries/slml2report /usr/local/bin/slml2report && \
+    ln -s /opt/cellorganizer-binaries/slml2info /usr/local/bin/slml2info && \
+    ln -s /opt/cellorganizer-binaries/slml2slml /usr/local/bin/slml2slml
 
     mv /opt/mcr/v92/bin/glnxa64/libexpat.so.1 /opt/mcr/v92/bin/glnxa64/libexpat.so.1.backup
     mv /opt/mcr/v92/bin/glnxa64/libexpat.so.1.5.0 /opt/mcr/v92/bin/glnxa64/libexpat.so.1.5.0.backup
@@ -64,7 +64,7 @@ IncludeCmd: yes
 
 ######slml2report############
 %appenv slml2report
-    cell_app=/opt/cellorganizer-binaries/lml2report
+    cell_app=/opt/cellorganizer-binaries/slml2report
     export cell_app
 
 %apphelp slml2report
