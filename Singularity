@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: murphylab/matlabmcr2017a-jupyter
+From: murphylab/matlabmcr2017a
 
 IncludeCmd: yes
 
