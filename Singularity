@@ -85,7 +85,6 @@ IncludeCmd: yes
     exec /bin/bash "$@"
 
 ######slml2slml############
-
 %appenv slml2slml
     cell_app=/opt/cellorganizer-binaries/slml2slml
     export cell_app
