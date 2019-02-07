@@ -1,5 +1,5 @@
-Bootstrap: docker
-From: murphylab/matlabmcr2017a:16.04
+Bootstrap: shub
+From: murphygroup/singularity-matlabmcr2017a
 
 IncludeCmd: yes
 
