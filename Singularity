@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: murphylab/matlabmcr2017a
+From: murphylab/matlabmcr2017a:16.04
 
 IncludeCmd: yes
 
@@ -10,7 +10,8 @@ IncludeCmd: yes
     echo "Update aptitude"
     /usr/bin/apt-get update && /usr/bin/apt-get -y upgrade
     /usr/bin/apt-get update --fix-missing
-    /usr/bin/apt-get install -y vim wget
+    /usr/bin/apt-get install -y vim wget build-essential libxext-dev
+    /usr/bin/apt-get install -y software-properties-common
 
     echo "Create folders"
     # Make folders for CBD HPC cluster
