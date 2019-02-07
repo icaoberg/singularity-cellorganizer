@@ -1,5 +1,7 @@
-Bootstrap: docker
-From: murphylab/matlabmcr2017a
+Bootstrap:shub
+From:murphylab/singularity-matlabmcr2017a
+
+
 
 IncludeCmd: yes
 
@@ -11,6 +13,7 @@ IncludeCmd: yes
     /usr/bin/apt-get update && /usr/bin/apt-get -y upgrade
     /usr/bin/apt-get update --fix-missing
     /usr/bin/apt-get install -y vim wget
+
 
     echo "Create folders"
     # Make folders for CBD HPC cluster
@@ -39,6 +42,44 @@ IncludeCmd: yes
 
     mv /opt/mcr/v92/bin/glnxa64/libexpat.so.1 /opt/mcr/v92/bin/glnxa64/libexpat.so.1.backup
     mv /opt/mcr/v92/bin/glnxa64/libexpat.so.1.5.0 /opt/mcr/v92/bin/glnxa64/libexpat.so.1.5.0.backup
+
+
+	echo "Installing Update Notebook Script"
+	mkdir /opt/cellorganizer-scripts
+	cat >> /opt/cellorganizer-scripts/update.sh <<- EOF
+	#!/bin/bash
+	url='http://www.cellorganizer.org/Downloads/v2.8.0/docker/notebooks.txt'
+	wget -nc --quiet -O file.txt \$url
+	while read -r line; do
+	    wget -nc --quiet -O tarball.tgz \$line
+	    tar -xvkf tarball.tgz
+	    rm -rf tarball.tgz
+	done < file.txt
+	rm -rf file.txt
+	EOF
+	
+	cat >> /opt/cellorganizer-scripts/get_images.sh <<- EOF
+	#!/bin/bash
+	FILE='.succesfully_downloaded_images'
+	if [ ! -f "\$FILE" ]; then
+	    url='http://murphylab.web.cmu.edu/data/Hela/3D/multitiff/cellorganizer_full_image_collection.zip'
+	    DIRECTORY='images'
+	    if [ ! -d "\$DIRECTORY" ]; then
+	        mkdir images && cd images
+	    else
+	        cd images
+	    fi
+	    wget -O image_set.zip $url
+	    unzip image_set.zip
+	    rm -rf image_set.zip
+	    touch ../.succesfully_downloaded_images
+	else
+	    echo 'Images already downloaded.'
+	fi
+	EOF
+	
+	echo "Installing Download Demos Scripts"
+	mkdir /opt/cellorganizer-demos
 
 ######img2slml############
 %appenv img2slml
