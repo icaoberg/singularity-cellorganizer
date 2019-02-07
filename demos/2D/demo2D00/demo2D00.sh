@@ -53,3 +53,5 @@ options.verbose = true;
 options.display = false;
 options.numberOfSynthesizedImages = 1;
 " > input.txt
+
+slml2img input.txt

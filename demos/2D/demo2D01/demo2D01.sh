@@ -74,3 +74,5 @@ options.model.id = 'lamp2';
 options.model.name = 'lamp2';
 options.documentation.description = 'This model has been trained using demo2D01 from CellOrganizer';\
 " > input.txt
+
+img2slml input.txt
