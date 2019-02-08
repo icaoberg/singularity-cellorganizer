@@ -78,7 +78,7 @@ IncludeCmd: yes
 	cat >> /opt/cellorganizer-demos/get_demos.sh <<- EOF
 	FILE='.succesfully_downloaded_demos'
 	if [ ! -f "\$FILE" ]; then
-	    url='http://www.cellorganizer.org/Downloads/v2.8.0/singularity/scripts.tgz'
+	    url='http://www.cellorganizer.org/Downloads/v2.8.0/singularity/demos.tgz'
 	    DIRECTORY='demos'
 	    if [ ! -d "\$DIRECTORY" ]; then
 	        mkdir \$DIRECTORY && cd \$DIRECTORY
