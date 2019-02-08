@@ -1,5 +1,5 @@
 Bootstrap:shub
-From:murphylab/singularity-matlabmcr2017a
+From:murphygroup/singularity-matlabmcr2017a
 
 
 IncludeCmd: yes
