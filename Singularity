@@ -2,7 +2,6 @@ Bootstrap:shub
 From:murphylab/singularity-matlabmcr2017a
 
 
-
 IncludeCmd: yes
 
 %runscript
@@ -48,14 +47,10 @@ IncludeCmd: yes
 	mkdir /opt/cellorganizer-scripts
 	cat >> /opt/cellorganizer-scripts/update.sh <<- EOF
 	#!/bin/bash
-	url='http://www.cellorganizer.org/Downloads/v2.8.0/docker/notebooks.txt'
-	wget -nc --quiet -O file.txt \$url
-	while read -r line; do
-	    wget -nc --quiet -O tarball.tgz \$line
-	    tar -xvkf tarball.tgz
-	    rm -rf tarball.tgz
-	done < file.txt
-	rm -rf file.txt
+	url='http://www.cellorganizer.org/Downloads/v2.8.0/docker/scripts.tgz'
+	wget -nc --quiet -O scripts.tgz \$url
+	tar -xvkf scripts.tgz
+	rm -rf scripts.tgz
 	EOF
 	
 	cat >> /opt/cellorganizer-scripts/get_images.sh <<- EOF
@@ -69,7 +64,7 @@ IncludeCmd: yes
 	    else
 	        cd images
 	    fi
-	    wget -O image_set.zip $url
+	    wget -O image_set.zip \$url
 	    unzip image_set.zip
 	    rm -rf image_set.zip
 	    touch ../.succesfully_downloaded_images
@@ -80,7 +75,22 @@ IncludeCmd: yes
 	
 	echo "Installing Download Demos Scripts"
 	mkdir /opt/cellorganizer-demos
-
+	cat >> /opt/cellorganizer-demos/get_demos.sh <<- EOF
+	FILE='.succesfully_downloaded_demos'
+	if [ ! -f "\$FILE" ]; then
+	    url='http://www.cellorganizer.org/Downloads/v2.8.0/singularity/scripts.tgz'
+	    DIRECTORY='demos'
+	    if [ ! -d "\$DIRECTORY" ]; then
+	        mkdir \$DIRECTORY && cd \$DIRECTORY
+	    else
+	        cd \$DIRECTORY
+	    fi
+	    wget -O demo_set.zip \$url && unzip demo_set.zip
+	    rm -rf demo_set.zip
+	    touch ../.succesfully_downloaded_demos	
+	fi
+	EOF
+	
 ######img2slml############
 %appenv img2slml
     cell_app=/opt/cellorganizer-binaries/img2slml/
