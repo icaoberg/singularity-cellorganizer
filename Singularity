@@ -41,7 +41,8 @@ IncludeCmd: yes
 
     mv /opt/mcr/v92/bin/glnxa64/libexpat.so.1 /opt/mcr/v92/bin/glnxa64/libexpat.so.1.backup
     mv /opt/mcr/v92/bin/glnxa64/libexpat.so.1.5.0 /opt/mcr/v92/bin/glnxa64/libexpat.so.1.5.0.backup
-
+	mv /opt/mcr/v92/bin/glnxa64/libcrypto.so.1.0.0 /opt/mcr/v92/bin/glnxa64/libcrypto.so.1.0.0.backup
+	mv /opt/mcr/v92/bin/glnxa64/libssl.so.1.0.0 /opt/mcr/v92/bin/glnxa64/libssl.so.1.0.0.backup
 
 	echo "Installing Update Notebook Script"
 	mkdir /opt/cellorganizer-scripts
