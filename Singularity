@@ -1,6 +1,5 @@
 Bootstrap:shub
-From:murphygroup/singularity-matlabmcr2017a
-
+From: murphygroup/singularity-matlabmcr2017a
 
 IncludeCmd: yes
 
@@ -11,7 +10,8 @@ IncludeCmd: yes
     echo "Update aptitude"
     /usr/bin/apt-get update && /usr/bin/apt-get -y upgrade
     /usr/bin/apt-get update --fix-missing
-    /usr/bin/apt-get install -y vim wget
+    /usr/bin/apt-get install -y vim wget build-essential libxext-dev
+    /usr/bin/apt-get install -y software-properties-common
 
 
     echo "Create folders"
