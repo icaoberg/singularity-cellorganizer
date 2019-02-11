@@ -73,26 +73,14 @@ IncludeCmd: yes
 	    echo 'Images already downloaded.'
 	fi
 	EOF
+	
 
     echo "Installing Download Demos Scripts"
     mkdir /opt/cellorganizer-demos
-    cat >> /opt/cellorganizer-demos/get_demos.sh <<- EOF
-	FILE='.succesfully_downloaded_demos'
-	if [ ! -f "\$FILE" ]; then
-	    url='http://www.cellorganizer.org/Downloads/v2.8.0/singularity/demos.tgz'
-	    DIRECTORY='demos'
-	    if [ ! -d "\$DIRECTORY" ]; then
-	        mkdir \$DIRECTORY && cd \$DIRECTORY
-	    else
-	        cd \$DIRECTORY
-	    fi
-	    wget -O demo_set.zip \$url && unzip demo_set.zip
-	    rm -rf demo_set.zip
-	    touch ../.succesfully_downloaded_demos
-	else
-	    echo "Already downloaded demos"
-	fi
-	EOF
+	url='http://www.cellorganizer.org/Downloads/v2.8.0/singularity/demos.tgz'
+	wget -O demo_set.tgz $url && mv demo_set.tgz /opt/cellorganizer-demos && tar -xvkf /opt/cellorganizer-demos/demo_set.tgz
+	rm -rf /opt/cellorganizer-demos/demo_set.tgz
+	
 
 ######img2slml############
 %appenv img2slml
