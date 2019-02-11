@@ -13,6 +13,12 @@ IncludeCmd: yes
     /usr/bin/apt-get install -y vim wget build-essential libxext-dev
     /usr/bin/apt-get install -y software-properties-common
 
+    echo "Configuring Environment for User" 
+    USERNAME=murphylab
+    UID=1000
+    useradd -m -s /bin/bash -N -u $UID $USERNAME
+    if [ ! -d /home/$USERNAME/ ]; then mkdir /home/$USERNAME/; fi
+
     echo "Create folders"
     # Make folders for CBD HPC cluster
     if [ ! -d /images ]; then mkdir /images; fi
@@ -76,10 +82,11 @@ IncludeCmd: yes
 	
 
     echo "Installing Download Demos Scripts"
+	cd /home/murphylab
     mkdir /opt/cellorganizer-demos
 	url='http://www.cellorganizer.org/Downloads/v2.8.0/singularity/demos.tgz'
-	wget -O demo_set.tgz $url && mv demo_set.tgz /opt/cellorganizer-demos && tar -xvkf /opt/cellorganizer-demos/demo_set.tgz
-	rm -rf /opt/cellorganizer-demos/demo_set.tgz
+	wget -O demo_set.tgz $url && tar xvf demo_set.tgz -C /opt/cellorganizer-demos 
+	rm -rf demo_set.tgz
 	
 
 ######img2slml############
