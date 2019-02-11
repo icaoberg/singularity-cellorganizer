@@ -13,7 +13,6 @@ IncludeCmd: yes
     /usr/bin/apt-get install -y vim wget build-essential libxext-dev
     /usr/bin/apt-get install -y software-properties-common
 
-
     echo "Create folders"
     # Make folders for CBD HPC cluster
     if [ ! -d /images ]; then mkdir /images; fi
@@ -49,7 +48,7 @@ IncludeCmd: yes
     mkdir /opt/cellorganizer-scripts
     cat >> /opt/cellorganizer-scripts/update.sh <<- EOF
     #!/bin/bash
-    url='http://www.cellorganizer.org/Downloads/v2.8.0/docker/scripts.tgz'
+    url='http://www.cellorganizer.org/Downloads/v2.8.0/singularity/scripts.tgz'
     wget -nc --quiet -O scripts.tgz \$url
     tar -xvkf scripts.tgz
     rm -rf scripts.tgz
