@@ -1,23 +1,26 @@
-Bootstrap:shub
-From: murphygroup/singularity-matlabmcr2017a
+Bootstrap:localimage
+From:singularity-matlabmcr2018b.simg
 
 IncludeCmd: yes
 
 %runscript
     exec /bin/bash "$@"
-
+%files
+    cellorganizer-binaries.tgz /home/murphylab
 %post
     echo "Update aptitude"
     /usr/bin/apt-get update && /usr/bin/apt-get -y upgrade
     /usr/bin/apt-get update --fix-missing
     /usr/bin/apt-get install -y vim wget build-essential libxext-dev
     /usr/bin/apt-get install -y software-properties-common
+    /usr/bin/add-apt-repository ppa:webupd8team/java
+    /usr/bin/apt-get update && apt-get upgrade -y
+    /usr/bin/apt-get install -y openjdk-8-jdk
+    /usr/bin/apt-get install -y build-essential git \
+    	unzip \
+	xorg
 
     echo "Configuring Environment for User" 
-    USERNAME=murphylab
-    UID=1000
-    useradd -m -s /bin/bash -N -u $UID $USERNAME
-    if [ ! -d /home/$USERNAME/ ]; then mkdir /home/$USERNAME/; fi
 
     echo "Create folders"
     # Make folders for CBD HPC cluster
@@ -27,8 +30,7 @@ IncludeCmd: yes
     if [ ! -d /scratch ]; then mkdir /scratch; fi
 
     echo "Download binaries"
-    cd /home/murphylab && \
-    wget -nc --quiet http://www.cellorganizer.org/Downloads/v2.8.0/docker/cellorganizer-binaries.tgz && \
+    cd /home/murphylab
     tar -xvf cellorganizer-binaries.tgz && \
     rm cellorganizer-binaries.tgz && \
 
@@ -45,10 +47,10 @@ IncludeCmd: yes
     ln -s /opt/cellorganizer-binaries/slml2info /usr/local/bin/slml2info && \
     ln -s /opt/cellorganizer-binaries/slml2slml /usr/local/bin/slml2slml
 
-    mv /opt/mcr/v92/bin/glnxa64/libexpat.so.1 /opt/mcr/v92/bin/glnxa64/libexpat.so.1.backup
-    mv /opt/mcr/v92/bin/glnxa64/libexpat.so.1.5.0 /opt/mcr/v92/bin/glnxa64/libexpat.so.1.5.0.backup
-    mv /opt/mcr/v92/bin/glnxa64/libcrypto.so.1.0.0 /opt/mcr/v92/bin/glnxa64/libcrypto.so.1.0.0.backup
-    mv /opt/mcr/v92/bin/glnxa64/libssl.so.1.0.0 /opt/mcr/v92/bin/glnxa64/libssl.so.1.0.0.backup
+    mv /opt/mcr/v95/bin/glnxa64/libexpat.so.1 /opt/mcr/v95/bin/glnxa64/libexpat.so.1.backup
+    mv /opt/mcr/v95/bin/glnxa64/libexpat.so.1.5.0 /opt/mcr/v95/bin/glnxa64/libexpat.so.1.5.0.backup
+    mv /opt/mcr/v95/bin/glnxa64/libcrypto.so.1.0.0 /opt/mcr/v95/bin/glnxa64/libcrypto.so.1.0.0.backup
+    mv /opt/mcr/v95/bin/glnxa64/libssl.so.1.0.0 /opt/mcr/v95/bin/glnxa64/libssl.so.1.0.0.backup
 
     echo "Installing Update Notebook Script"
     mkdir /opt/cellorganizer-scripts
