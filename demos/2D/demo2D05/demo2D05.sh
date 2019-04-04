@@ -14,7 +14,7 @@
 # * a valid SLML model file
 
 # Author: Xiongtao Ruan (xruan@andrew.cmu.edu)
-# 
+#
 # Copyright (C) 2018 Murphy Lab
 # Lane Center for Computational Biology
 # School of Computer Science
@@ -57,7 +57,7 @@ options.nucleus.class = 'framework';
 options.nucleus.type = 'pca';
 options.cell.class = 'framework';
 options.cell.type = 'pca';
-options.latent_dim = 15;
+options.model.pca.latent_dim = 15;
 directory = './images/HeLa/2D/LAM/';
 dnaImagesDirectoryPath = [ directory filesep 'orgdna' filesep 'cell*.tif' ];
 cellImagesDirectoryPath = [ directory filesep 'orgcell' filesep 'cell*.tif' ];
