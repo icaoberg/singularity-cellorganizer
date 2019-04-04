@@ -57,10 +57,10 @@ options.model.spharm_rpdm.alignment_method = 'major_axis';
 options.model.spharm_rpdm.rotation_plane = 'xy';
 
 directory = '../demo3D11/images/HeLa/3D/processed/';
-dnaImagesDirectoryPath = [ directory filesep 'LAM_cell[1-9]_ch0_t1.tif' ];
-cellImagesDirectoryPath = [ directory filesep 'LAM_cell[1-9]_ch1_t1.tif' ];
+dnaImagesDirectoryPath = {[ directory filesep 'LAM_cell[1-9]_ch0_t1.tif']} ;
+cellImagesDirectoryPath = {[ directory filesep 'LAM_cell[1-9]_ch1_t1.tif' ]};
 proteinImagesDirectoryPath = []
-options.masks = [ directory filesep 'LAM_cell[1-9]_mask_t1.tif' ];
+options.masks = {[ directory filesep 'LAM_cell[1-9]_mask_t1.tif' ]};
 options.model.resolution = [0.049, 0.049, 0.2000];
 options.downsampling = [5, 5, 1];
 options.model.filename = 'lamp2.xml';
