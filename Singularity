@@ -5,8 +5,6 @@ IncludeCmd: yes
 
 %runscript
     exec /bin/bash "$@"
-%files
-    cellorganizer-binaries.tgz /home/murphylab
 %post
     echo "Update aptitude"
     /usr/bin/apt-get update && /usr/bin/apt-get -y upgrade
