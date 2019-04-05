@@ -1,5 +1,5 @@
-Bootstrap:localimage
-From:singularity-matlabmcr2018b.simg
+Bootstrap:shub
+From:murphygroup/singularity-matlabmcr2018b
 
 IncludeCmd: yes
 
@@ -28,12 +28,13 @@ IncludeCmd: yes
     if [ ! -d /projects ]; then mkdir /projects; fi
     if [ ! -d /share ]; then mkdir /share; fi
     if [ ! -d /scratch ]; then mkdir /scratch; fi
-
+ 
     echo "Download binaries"
-    cd /home/murphylab
+    cd /home/murphylab && \
+    wget -nc --quiet http://www.cellorganizer.org/Downloads/v2.8.0/docker/cellorganizer-binaries.tgz && \
     tar -xvf cellorganizer-binaries.tgz && \
-    rm cellorganizer-binaries.tgz && \
-
+    rm cellorganizer-binaries.tgz   
+ 
     mv cellorganizer-binaries/ /opt/ && \
     chmod +x /opt/cellorganizer-binaries/img2slml && \
     chmod +x /opt/cellorganizer-binaries/slml2img && \
