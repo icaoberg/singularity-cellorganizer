@@ -1,4 +1,4 @@
-# demo3D51
+# demo3D50
 #
 # Train 3D generative SPHARM-RPDM cell shape model using the Murphy Lab 3D HeLa dataset.
 #
@@ -42,19 +42,25 @@ echo -e "
 options.verbose = true;
 options.debug = ~false;
 options.display = false;
-options.model.name = 'demo3D51';
+options.model.name = 'demo3D50';
 options = ml_initparam( options, struct('train', struct( 'flag', 'cell' )));
 options.cell.class = 'cell_membrane';
 options.cell.type = 'spharm_rpdm';
-options.rpdm_options.postprocess = ~false;
-options.rpdm_options.maxDeg = 31;
-options.rpdm_options.components = {'cell'};
-options.latent_dim = 15;
+options.model.spharm_rpdm.postprocess = ~false;
+options.model.spharm_rpdm.maxDeg = 31;
+options.model.spharm_rpdm.components = {'cell'};
+options.model.spharm_rpdm.latent_dim = 15;
+
+% alignment method: 'major_axis' or 'foe'
+options.model.spharm_rpdm.alignment_method = 'major_axis';
+% plane of rotation: 'xy' 'yz', 'xz' or 'xyz'
+options.model.spharm_rpdm.rotation_plane = 'xy';
+
 directory = '../demo3D11/images/HeLa/3D/processed/';
-dnaImagesDirectoryPath = [ directory filesep 'LAM_cell[1-9]_ch0_t1.tif' ];
-cellImagesDirectoryPath = [ directory filesep 'LAM_cell[1-9]_ch1_t1.tif' ];
+dnaImagesDirectoryPath = {[ directory filesep 'LAM_cell[1-9]_ch0_t1.tif']} ;
+cellImagesDirectoryPath = {[ directory filesep 'LAM_cell[1-9]_ch1_t1.tif' ]};
 proteinImagesDirectoryPath = []
-options.masks = [ directory filesep 'LAM_cell[1-9]_mask_t1.tif' ];
+options.masks = {[ directory filesep 'LAM_cell[1-9]_mask_t1.tif' ]};
 options.model.resolution = [0.049, 0.049, 0.2000];
 options.downsampling = [5, 5, 1];
 options.model.filename = 'lamp2.xml';
@@ -63,8 +69,8 @@ options.model.name = 'lamp2';
 options.nucleus.name = 'LAMP2';
 options.cell.model = 'LAMP2';
 dimensionality = '3D';
-options.documentation.description = 'This model has been trained using demo3D51 from CellOrganizer';
-options.segminnucfraction = 0.1;
+options.documentation.description = 'This model has been trained using demo3D50 from CellOrganizer';
+options.model.spharm_rpdm.segminnucfraction = 0.1;
 " > input.txt
 
 img2slml input.txt
