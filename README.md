@@ -84,7 +84,7 @@ To run a specific demo
 
 ## Contributing
 
-When contributing to this repository, please first discuss the change you wish to make via issue, [email](mailto:cellorganizer@compbio.cmu.edu), or any other method with the owners of this repository before making a change.
+When contributing to this repository, please first discuss the change you wish to make via issue, [email](mailto:cellorganizer-dev@compbio.cmu.edu), or any other method with the owners of this repository before making a change.
 
 ---
 
