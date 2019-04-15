@@ -38,6 +38,14 @@
 # For additional information visit http://murphylab.web.cmu.edu or
 # send email to murphy@cmu.edu
 
+DIRECTORY=../demo3D11/images/HeLa/3D/processed
+if [ ! -d "$DIRECTORY" ]; then
+	wget -nc --quiet http://www.cellorganizer.org/Downloads/v2.8.0/docker/images/demo3D11.tgz
+	mkdir -p ../demo3D11/images/HeLa/3D/processed
+	tar -xvf demo3D11.tgz -C ../demo3D11/images/HeLa/3D/processed/
+	rm -f demo3D11.tgz
+fi
+
 echo -e "
 options.verbose = true;
 options.debug = ~false;
@@ -56,7 +64,7 @@ options.model.spharm_rpdm.alignment_method = 'major_axis';
 % plane of rotation: 'xy' 'yz', 'xz' or 'xyz'
 options.model.spharm_rpdm.rotation_plane = 'xy';
 
-directory = '../demo3D11/images/HeLa/3D/processed/';
+directory = '../demo3D11/images/HeLa/3D/processed';
 dnaImagesDirectoryPath = {[ directory filesep 'LAM_cell[1-9]_ch0_t1.tif']} ;
 cellImagesDirectoryPath = {[ directory filesep 'LAM_cell[1-9]_ch1_t1.tif' ]};
 proteinImagesDirectoryPath = []

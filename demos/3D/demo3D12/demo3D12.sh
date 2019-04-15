@@ -67,6 +67,13 @@
 # March 9, 2016 I. Cao-Berg Fixed problem where resolution was not set and
 # thus method would fail
 
+DIRECTORY=../demo3D11/images/HeLa/3D/processed
+if [ ! -d "$DIRECTORY" ]; then
+	wget -nc --quiet http://www.cellorganizer.org/Downloads/v2.8.0/docker/images/demo3D11.tgz
+	mkdir -p ../demo3D11/images/HeLa/3D/processed
+	tar -xvf demo3D11.tgz -C ../demo3D11/images/HeLa/3D/processed/
+	rm -f demo3D11.tgz
+fi
 
 echo -e "
 pattern = 'LAMP2';
