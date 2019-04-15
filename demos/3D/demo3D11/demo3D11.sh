@@ -73,7 +73,7 @@ options.cell.class = 'cell_membrane';
 options.cell.model = 'framework';
 options.cell.id = num2str(now);
 options.model.resolution = [0.049, 0.049, 0.2000];
-directory = 'images/HeLa/3D/processed/';
+directory = 'images/HeLa/3D/processed';
 dimensionality = '3D';
 for i = 1:15; dnaImagesDirectoryPath{i} = [directory filesep 'LAM_cell' num2str(i) '_ch0_t1.tif']; cellImagesDirectoryPath{i} = [directory filesep 'LAM_cell' num2str(i) '_ch1_t1.tif']; proteinImagesDirectoryPath{i} = [directory filesep 'LAM_cell' num2str(i) '_ch2_t1.tif']; options.masks{i} = [directory filesep 'LAM_cell' num2str(i) '_mask_t1.tif']; end;
 options.documentation.author = 'Murphy Lab';
