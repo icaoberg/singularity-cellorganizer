@@ -6,18 +6,6 @@ IncludeCmd: yes
 %runscript
     exec /bin/bash "$@"
 %post
-    echo "Update aptitude"
-    /usr/bin/apt-get update && /usr/bin/apt-get -y upgrade
-    /usr/bin/apt-get update --fix-missing
-    /usr/bin/apt-get install -y vim wget build-essential libxext-dev
-    /usr/bin/apt-get install -y software-properties-common
-    /usr/bin/add-apt-repository ppa:webupd8team/java
-    /usr/bin/apt-get update && apt-get upgrade -y
-    /usr/bin/apt-get install -y openjdk-8-jdk
-    /usr/bin/apt-get install -y build-essential git \
-    	unzip \
-	xorg
-
     echo "Configuring Environment for User" 
 
     echo "Create folders"
@@ -29,9 +17,9 @@ IncludeCmd: yes
  
     echo "Download binaries"
     cd /home/murphylab && \
-    wget -nc --quiet http://www.cellorganizer.org/Downloads/v2.8.0/docker/cellorganizer-binaries.tgz && \
-    tar -xvf cellorganizer-binaries.tgz && \
-    rm cellorganizer-binaries.tgz   
+    wget -nc --quiet http://www.cellorganizer.org/Downloads/v2.8.0/docker/cellorganizer-binaries-matlabmcr2018b.tgz && \
+    tar -xvf cellorganizer-binaries-matlabmcr2018b.tgz && \
+    rm cellorganizer-binaries-matlabmcr2018b.tgz   
  
     mv cellorganizer-binaries/ /opt/ && \
     chmod +x /opt/cellorganizer-binaries/img2slml && \
