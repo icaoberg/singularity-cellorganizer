@@ -17,7 +17,7 @@ IncludeCmd: yes
  
     echo "Download binaries"
     cd /home/murphylab && \
-    wget -nc --quiet http://www.cellorganizer.org/Downloads/v2.8.0/docker/cellorganizer-binaries-matlabmcr2018b.tgz && \
+    wget -nc --quiet http://www.cellorganizer.org/Downloads/v2.8.1/docker/cellorganizer-binaries-matlabmcr2018b.tgz && \
     tar -xvf cellorganizer-binaries-matlabmcr2018b.tgz && \
     rm cellorganizer-binaries-matlabmcr2018b.tgz   
  
