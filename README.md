@@ -33,12 +33,16 @@ Cell types for which generative models for at least some organelles have been bu
 
 ### CellOrganizer v2.8.1
 
-#### Fixes 
-* Display shape space when dataset field is not present or empty. 
-* Generation of watertight SBML Spatial output has been corrected for translation errors. Other ----- * The following models have been rebuilt using this version of CellOrganizer. Updated models can be found in the model repository. 
-	* 2D HeLa diffeomorphic framework 
-	* 2D HeLa PCA framework 
-	* 2D HeLa classic framework
+#### Fixes
+* Display shape space when dataset field is not present or empty.
+* Generation of watertight SBML Spatial output has been corrected for translation errors.
+
+#### Other
+* The following models have been rebuilt using this version of CellOrganizer. Updated models can be found in the model re$
+        * 2D HeLa diffeomorphic framework
+        * 2D HeLa PCA framework
+        * 2D HeLa classic framework
+* CellOrganizer for Galaxy now Galaxy server v19.05
 
 ### CellOrganizer v2.8.0
 
