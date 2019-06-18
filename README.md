@@ -31,6 +31,15 @@ These models can be conditional upon each other. For example, for a given synthe
 
 Cell types for which generative models for at least some organelles have been built include human HeLa cells, mouse NIH 3T3 cells, and Arabidopsis protoplasts. Planned projects include mouse T lymphocytes and rat PC12 cells.
 
+### CellOrganizer v2.8.1
+
+#### Fixes 
+* Display shape space when dataset field is not present or empty. 
+* Generation of watertight SBML Spatial output has been corrected for translation errors. Other ----- * The following models have been rebuilt using this version of CellOrganizer. Updated models can be found in the model repository. 
+	* 2D HeLa diffeomorphic framework 
+	* 2D HeLa PCA framework 
+	* 2D HeLa classic framework
+
 ### CellOrganizer v2.8.0
 
 #### Features
