@@ -1,7 +1,7 @@
 # singularity-cellorganizer
 
 [![https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg](https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg)](https://www.singularity-hub.org/collections/2313)
-[![Release Status](https://img.shields.io/badge/release-v2.8.0-red.svg)](http://www.cellorganizer.org/)
+[![Release Status](https://img.shields.io/badge/release-v2.8.1-red.svg)](http://www.cellorganizer.org/)
 [![GitHub issues](https://img.shields.io/github/issues/icaoberg/singularity-cellorganizer.svg)](https://github.com/icaoberg/singularity-cellorganizer/issues)
 [![GitHub forks](https://img.shields.io/github/forks/icaoberg/singularity-cellorganizer.svg)](https://github.com/icaoberg/singularity-cellorganizer/network)
 [![GitHub stars](https://img.shields.io/github/stars/icaoberg/singularity-cellorganizer.svg)](https://github.com/icaoberg/singularity-cellorganizer/stargazers)
@@ -55,7 +55,7 @@ Cell types for which generative models for at least some organelles have been bu
 
 ## Running on Singularity
 
-## CellOrganizer v2.8.0 
+## CellOrganizer v2.8.*  
 
 ### Creating the container
 
