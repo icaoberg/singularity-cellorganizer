@@ -36,10 +36,6 @@
 #
 # For additional information visit http://murphylab.web.cmu.edu or
 # send email to murphy@cmu.edu
-if [ ! -d "../demo2D01/lamp2.mat" ]; then 
-    echo "RUN demo2D01 first"
-    exit
-fi
 
 echo -e "options.numberOfSynthesizedImages = 1;
 options.targetDirectory = pwd;
