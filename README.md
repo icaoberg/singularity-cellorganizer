@@ -7,7 +7,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/icaoberg/singularity-cellorganizer.svg)](https://github.com/icaoberg/singularity-cellorganizer/stargazers)
 [![GitHub license](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://www.gnu.org/licenses/quick-guide-gplv3.en.html)
 
-## About CellOrganizer 
+## About CellOrganizer
 
 ![CellOrganizer Logo](http://www.cellorganizer.org/wp-content/uploads/2017/08/CellOrganizerLogo2-250.jpg)
 
@@ -31,6 +31,10 @@ These models can be conditional upon each other. For example, for a given synthe
 
 Cell types for which generative models for at least some organelles have been built include human HeLa cells, mouse NIH 3T3 cells, and Arabidopsis protoplasts. Planned projects include mouse T lymphocytes and rat PC12 cells.
 
+## Pre-requisites
+
+* [Singularity v3.5.+](https://sylabs.io/docs/).
+
 ### CellOrganizer v2.8.1
 
 #### Fixes
@@ -39,7 +43,7 @@ Cell types for which generative models for at least some organelles have been bu
 
 #### Other
 * The following models have been rebuilt using this version of CellOrganizer. Updated models can be found in the model repository.
-   
+
   - 2D HeLa diffeomorphic framework
   - 2D HeLa PCA framework
   - 2D HeLa classic framework
@@ -53,7 +57,7 @@ Cell types for which generative models for at least some organelles have been bu
 * Added outline PCA model for 2D cell and nuclear shapes. Includes training, synthesis and info demos.
 * Added SPHARM-RPDM model for 3D cell and nuclear shapes (see https://doi.org/10.1093/bioinformatics/bty983). Includes training, synthesis and info demos.
 
-#### Fixes 
+#### Fixes
 * Fixed issues with options.train.flag. Valid options should be nuclear, cell, framework, and protein.
 
 #### Enhancements
@@ -61,21 +65,21 @@ Cell types for which generative models for at least some organelles have been bu
 
 ## Running on Singularity
 
-## CellOrganizer v2.8.*  
+## CellOrganizer v2.8.*
 
 ### Creating the container
 
 To create the container, run this command
 
 ```
-> bash ./script.sh 
+> bash ./build.sh
 ```
 ### Accessing the container
 
 To access the container, run the command
 
 ```
-> singularity shell cellorganizer.simg
+> singularity shell cellorganizer.sif
 
 Singularity: Invoking an interactive shell within container...
 ```
