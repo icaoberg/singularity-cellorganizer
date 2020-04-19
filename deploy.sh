@@ -11,7 +11,7 @@ if [ -f $IMAGE ]; then
 	rm -fv $IMAGE
 fi
 
-#sudo singularity build $IMAGE $DEFINITION
+sudo singularity build $IMAGE $DEFINITION
 
 if [ ! -d $APP/v$VERSION ]; then
 	mkdir -p $APP/v$VERSION
