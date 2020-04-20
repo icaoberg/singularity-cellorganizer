@@ -1,3 +1,0 @@
-[submodule "docker-cellorganizer"]
-	path = docker-cellorganizer
-	url = git@github.com:icaoberg/docker-cellorganizer.git
